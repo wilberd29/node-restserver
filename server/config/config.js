@@ -16,3 +16,13 @@ let urlDB;
 }
 
 process.env.URLlDB=urlDB;
+
+//vencimiento del token o fecha de expiracion
+//60 segundos
+//60 minutos
+//24 horas
+//30 dias
+process.env.CADUCIDAD_TOKEN=60 * 60 * 24 * 30;
+
+//palabra clave o Firma
+process.env.FIRMA= process.env.FIRMA || 'secret-demo';

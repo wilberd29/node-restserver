@@ -1,13 +1,17 @@
 const express = require('express');
 const bcrypt=require('bcrypt');
 const _=require('underscore');
-const Usuario=require('../models/usuario');
+
 const { response } = require('express');
-const usuario = require('../models/usuario');
+const Usuario = require('../models/usuario');
+
+//para obtener el middlewares Autenticacion verifica Token
+const { verificaToken }=require('../middlewares/autenticacion');
+
 const app = express();
 
 //Obener listado de usuarios
-app.get('/usuario', function(req, res) {
+app.get('/usuario', verificaToken, (req, res) => {
     //res.json('get Usuario LOCAL!!!');
 
     let Estado = {
