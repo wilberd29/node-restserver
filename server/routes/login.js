@@ -37,7 +37,7 @@ app.post('/login', (req, res)=> {
         }
 
         let token=jwt.sign({
-                usuario: usuarioDB  //payload
+                usuario: usuarioDB    //payload
                 }, process.env.FIRMA, //firma
                 { expiresIn: process.env.CADUCIDAD_TOKEN });    //expira en 1 hora, 30 dias
 
@@ -45,7 +45,7 @@ app.post('/login', (req, res)=> {
             ok: true,
             usuario: usuarioDB,
             token: token
-        })
+            })
 
         })
     

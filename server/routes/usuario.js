@@ -6,13 +6,19 @@ const { response } = require('express');
 const Usuario = require('../models/usuario');
 
 //para obtener el middlewares Autenticacion verifica Token
-const { verificaToken }=require('../middlewares/autenticacion');
+const { verificaToken,  verficaAdmin_Role }=require('../middlewares/autenticacion');
 
 const app = express();
 
 //Obener listado de usuarios
 app.get('/usuario', verificaToken, (req, res) => {
     //res.json('get Usuario LOCAL!!!');
+
+    // return res.json({
+    //     usuario: req.usuario,
+    //     nombre: req.usuario.nombre,
+    //     email: req.usuario.email
+    // })
 
     let Estado = {
         estado: true
@@ -49,7 +55,7 @@ app.get('/usuario', verificaToken, (req, res) => {
         })
 });
 
-app.post('/usuario', function(req, res) {
+app.post('/usuario', [verificaToken, verficaAdmin_Role], function(req, res) {
 
     let body = req.body;
     let usuario=new Usuario({
@@ -76,7 +82,7 @@ app.post('/usuario', function(req, res) {
 });
 
 
-app.put('/usuario/:id', function(req, res) {
+app.put('/usuario/:id', [verificaToken, verficaAdmin_Role], function(req, res) {
 
     let id = req.params.id;
     //let body= req.body;
@@ -105,7 +111,7 @@ app.put('/usuario/:id', function(req, res) {
 });
 
 
-app.delete('/usuario/:id', function(req, res) {
+app.delete('/usuario/:id', [verificaToken, verficaAdmin_Role], function(req, res) {
     //res.json('delete Usuario');
     let id=req.params.id;
 
