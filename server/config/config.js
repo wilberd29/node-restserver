@@ -28,4 +28,5 @@ process.env.CADUCIDAD_TOKEN=60 * 60 * 24 * 30;
 process.env.FIRMA= process.env.FIRMA || 'secret-demo';
 
 //Google client Id
-process.env.CLIENT_ID=process.env.CLIENT_ID || "339317350182-0c86k9gallaag2p69ltsrcdl1l22fuh3.apps.googleusercontent.com";
+process.env.CLIENT_ID=process.env.CLIENT_ID || '339317350182-0c86k9gallaag2p69ltsrcdl1l22fuh3.apps.googleusercontent.com';
+
