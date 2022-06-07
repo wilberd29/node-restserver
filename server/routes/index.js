@@ -6,5 +6,7 @@ const app = express();
 app.use(require('./usuario'));
 //invocar post login
 app.use(require('./login'));
+app.use(require('./categoria'));
+app.use(require('./producto'));
 
 module.exports = app;

@@ -22,7 +22,7 @@ process.env.URLlDB=urlDB;
 //60 minutos
 //24 horas
 //30 dias
-process.env.CADUCIDAD_TOKEN=60 * 60 * 24 * 30;
+process.env.CADUCIDAD_TOKEN='48h'; //60 * 60 * 24 * 30; 1 mes
 
 //palabra clave o Firma
 process.env.FIRMA= process.env.FIRMA || 'secret-demo';
