@@ -8,6 +8,7 @@ let app = express();
 let Producto = require('../models/producto');
 
 
+
 // ===========================
 //  Obtener productos por termino
 // ===========================
